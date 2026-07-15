@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Car Details</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="cars.html">
+
+🚗 Car Sales System
+
+</a>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<img id="carImage"
+class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-md-6">
+
+<h2 id="carModel"></h2>
+
+<h5 id="carBrand"></h5>
+
+<hr>
+
+<p><b>Fuel :</b> <span id="fuel"></span></p>
+
+<p><b>Transmission :</b> <span id="transmission"></span></p>
+
+<p><b>Mileage :</b> <span id="mileage"></span></p>
+
+<p><b>Year :</b> <span id="year"></span></p>
+
+<h3 class="text-success" id="price"></h3>
+
+<a href="cars.html" class="btn btn-secondary mt-3">
+
+Back
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const cars=[
+
+{
+brand:"Tata",
+model:"Nexon",
+fuel:"Petrol",
+transmission:"Manual",
+mileage:"17.4 km/l",
+year:"2024",
+price:"₹13,50,000",
+image:"images/nexon.avif"
+},
+
+{
+brand:"Tata",
+model:"Harrier",
+fuel:"Diesel",
+transmission:"Automatic",
+mileage:"16.8 km/l",
+year:"2024",
+price:"₹24,99,000",
+image:"images/harrier.avif"
+},
+
+{
+brand:"Hyundai",
+model:"Creta",
+fuel:"Petrol",
+transmission:"Automatic",
+mileage:"17.7 km/l",
+year:"2024",
+price:"₹18,20,000",
+image:"images/creta.avif"
+},
+
+{
+brand:"Hyundai",
+model:"Venue",
+fuel:"Petrol",
+transmission:"Manual",
+mileage:"18.3 km/l",
+year:"2024",
+price:"₹11,50,000",
+image:"images/venue.avif"
+},
+
+{
+brand:"Mahindra",
+model:"Scorpio",
+fuel:"Diesel",
+transmission:"Manual",
+mileage:"15.4 km/l",
+year:"2024",
+price:"₹21,90,000",
+image:"images/scorpio.avif"
+},
+
+{
+brand:"Mahindra",
+model:"XUV700",
+fuel:"Diesel",
+transmission:"Automatic",
+mileage:"17 km/l",
+year:"2024",
+price:"₹26,50,000",
+image:"images/xuv700.avif"
+},
+
+{
+brand:"Toyota",
+model:"Fortuner",
+fuel:"Diesel",
+transmission:"Automatic",
+mileage:"14.2 km/l",
+year:"2024",
+price:"₹42,00,000",
+image:"images/fortuner.avif"
+},
+
+{
+brand:"Toyota",
+model:"Innova Hycross",
+fuel:"Hybrid",
+transmission:"Automatic",
+mileage:"23.2 km/l",
+year:"2024",
+price:"₹30,50,000",
+image:"images/hycross.avif"
+},
+
+{
+brand:"Honda",
+model:"City",
+fuel:"Petrol",
+transmission:"CVT",
+mileage:"18.4 km/l",
+year:"2024",
+price:"₹15,80,000",
+image:"images/city.avif"
+},
+
+{
+brand:"Honda",
+model:"Elevate",
+fuel:"Petrol",
+transmission:"Manual",
+mileage:"16.9 km/l",
+year:"2024",
+price:"₹16,90,000",
+image:"images/elevate.avif"
+}
+
+];
+
+const params=new URLSearchParams(window.location.search);
+
+const selected=params.get("car");
+
+const car=cars.find(c=>c.model===selected);
+
+document.getElementById("carImage").src=car.image;
+document.getElementById("carModel").innerHTML=car.model;
+document.getElementById("carBrand").innerHTML=car.brand;
+document.getElementById("fuel").innerHTML=car.fuel;
+document.getElementById("transmission").innerHTML=car.transmission;
+document.getElementById("mileage").innerHTML=car.mileage;
+document.getElementById("year").innerHTML=car.year;
+document.getElementById("price").innerHTML=car.price;
+
+</script>
+
+</body>
+</html>
