@@ -1,207 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Car Details</title>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
-
+<style>
+body{background:#f5f5f5}
+#carImage{width:100%;height:420px;object-fit:cover;border-radius:15px}
+.card{border:none;border-radius:15px}
+.specs p{margin-bottom:8px}
+</style>
 </head>
-
 <body>
-
 <nav class="navbar navbar-dark bg-primary">
-
 <div class="container">
-
-<a class="navbar-brand fw-bold" href="cars.html">
-
- Car Sales System
-
-</a>
-
+<a class="navbar-brand fw-bold" href="cars.html">Car Sales System</a>
 </div>
-
 </nav>
 
 <div class="container mt-5">
-
 <div class="row">
-
-<div class="col-md-6">
-
-<img id="carImage"
-class="img-fluid rounded shadow">
-
+<div class="col-lg-6">
+<img id="carImage" class="shadow">
 </div>
 
-<div class="col-md-6">
-
+<div class="col-lg-6">
 <h2 id="carModel"></h2>
-
-<h5 id="carBrand"></h5>
-
-<hr>
-
-<p><b>Fuel :</b> <span id="fuel"></span></p>
-
-<p><b>Transmission :</b> <span id="transmission"></span></p>
-
-<p><b>Mileage :</b> <span id="mileage"></span></p>
-
-<p><b>Year :</b> <span id="year"></span></p>
-
+<h5 class="text-primary" id="carBrand"></h5>
 <h3 class="text-success" id="price"></h3>
 
-<a href="cars.html" class="btn btn-secondary mt-3">
-
-Back
-
-</a>
-
+<div class="card shadow p-3 specs mt-3">
+<h4>Specifications</h4><hr>
+<p><b>Fuel :</b> <span id="fuel"></span></p>
+<p><b>Transmission :</b> <span id="transmission"></span></p>
+<p><b>Mileage :</b> <span id="mileage"></span></p>
+<p><b>Engine :</b> <span id="engine"></span></p>
+<p><b>Power :</b> <span id="power"></span></p>
+<p><b>Torque :</b> <span id="torque"></span></p>
+<p><b>Seating :</b> <span id="seating"></span></p>
+<p><b>Body Type :</b> <span id="bodyType"></span></p>
+<p><b>Drive Type :</b> <span id="driveType"></span></p>
+<p><b>Colour :</b> <span id="colour"></span></p>
+<p><b>Year :</b> <span id="year"></span></p>
+</div>
+</div>
 </div>
 
+<div class="row mt-4">
+<div class="col-md-6">
+<div class="card shadow p-3">
+<h4>Features</h4><hr>
+<ul id="features"></ul>
+</div>
 </div>
 
+<div class="col-md-6">
+<div class="card shadow p-3">
+<h4>Description</h4><hr>
+<p id="description"></p>
+</div>
+</div>
+</div>
+
+<div class="text-center mt-4 mb-5">
+<a href="cars.html" class="btn btn-secondary">Back</a>
+<button class="btn btn-primary ms-2">Book Test Drive</button>
+</div>
 </div>
 
 <script>
-
 const cars=[
-
 {
-brand:"Tata",
-model:"Nexon",
-fuel:"Petrol",
-transmission:"Manual",
-mileage:"17.4 km/l",
-year:"2024",
-price:"₹12,50,000",
-image:"images/nexon.avif"
-},
-
+brand:"Tata",model:"Nexon",fuel:"Petrol",transmission:"Manual",mileage:"17.4 km/l",engine:"1199 cc",power:"118 bhp",torque:"170 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"Blue",year:"2024",price:"₹12,50,000",description:"Compact SUV with 5-star safety and premium features.",features:["Touchscreen","Android Auto","Apple CarPlay","Reverse Camera","Cruise Control","6 Airbags","ABS with EBD","Auto Climate Control"],image:"images/nexon.avif"},
 {
-brand:"Tata",
-model:"Harrier",
-fuel:"Diesel",
-transmission:"Automatic",
-mileage:"16.8 km/l",
-year:"2024",
-price:"₹24,99,000",
-image:"images/harrier.avif"
-},
-
+brand:"Tata",model:"Harrier",fuel:"Diesel",transmission:"Automatic",mileage:"16.8 km/l",engine:"1956 cc",power:"168 bhp",torque:"350 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"White",year:"2024",price:"₹24,99,000",description:"Premium SUV with spacious cabin.",features:["Panoramic Sunroof","360 Camera","ADAS","6 Airbags","Touchscreen","Cruise Control","ABS","ESP"],image:"images/harrier.avif"},
 {
-brand:"Hyundai",
-model:"Creta",
-fuel:"Petrol",
-transmission:"Automatic",
-mileage:"17.7 km/l",
-year:"2024",
-price:"₹18,20,000",
-image:"images/creta.avif"
-},
-
+brand:"Hyundai",model:"Creta",fuel:"Petrol",transmission:"Automatic",mileage:"17.7 km/l",engine:"1497 cc",power:"113 bhp",torque:"144 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"Black",year:"2024",price:"₹18,20,000",description:"Popular family SUV.",features:["Sunroof","Android Auto","Apple CarPlay","Wireless Charger","Rear Camera","6 Airbags","ABS","Climate Control"],image:"images/creta.avif"},
 {
-brand:"Hyundai",
-model:"Venue",
-fuel:"Petrol",
-transmission:"Manual",
-mileage:"18.3 km/l",
-year:"2024",
-price:"₹11,50,000",
-image:"images/venue.avif"
-},
-
+brand:"Hyundai",model:"Venue",fuel:"Petrol",transmission:"Manual",mileage:"18.3 km/l",engine:"1197 cc",power:"82 bhp",torque:"114 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"Red",year:"2024",price:"₹11,50,000",description:"Compact city SUV.",features:["Touchscreen","Rear Camera","Airbags","ABS","Bluetooth","Steering Controls","USB","Parking Sensors"],image:"images/venue.avif"},
 {
-brand:"Mahindra",
-model:"Scorpio",
-fuel:"Diesel",
-transmission:"Manual",
-mileage:"15.4 km/l",
-year:"2024",
-price:"₹21,90,000",
-image:"images/scorpio.avif"
-},
-
+brand:"Mahindra",model:"Scorpio",fuel:"Diesel",transmission:"Manual",mileage:"15.4 km/l",engine:"2184 cc",power:"130 bhp",torque:"300 Nm",seating:"7",bodyType:"SUV",driveType:"RWD",colour:"Silver",year:"2024",price:"₹21,90,000",description:"Powerful SUV for all terrains.",features:["Touchscreen","Cruise Control","Camera","ESP","Hill Hold","Airbags","ABS","LED DRL"],image:"images/scorpio.avif"},
 {
-brand:"Mahindra",
-model:"XUV700",
-fuel:"Diesel",
-transmission:"Automatic",
-mileage:"17 km/l",
-year:"2024",
-price:"₹26,50,000",
-image:"images/xuv700.avif"
-},
-
+brand:"Mahindra",model:"XUV700",fuel:"Diesel",transmission:"Automatic",mileage:"17 km/l",engine:"2198 cc",power:"182 bhp",torque:"450 Nm",seating:"7",bodyType:"SUV",driveType:"AWD",colour:"Grey",year:"2024",price:"₹26,50,000",description:"Feature-rich premium SUV.",features:["ADAS","Panoramic Sunroof","Sony Audio","360 Camera","Alexa","Airbags","ABS","Wireless Charger"],image:"images/xuv700.avif"},
 {
-brand:"Toyota",
-model:"Fortuner",
-fuel:"Diesel",
-transmission:"Automatic",
-mileage:"14.2 km/l",
-year:"2024",
-price:"₹42,00,000",
-image:"images/fortuner.avif"
-},
-
+brand:"Toyota",model:"Fortuner",fuel:"Diesel",transmission:"Automatic",mileage:"14.2 km/l",engine:"2755 cc",power:"201 bhp",torque:"500 Nm",seating:"7",bodyType:"SUV",driveType:"4WD",colour:"White",year:"2024",price:"₹42,00,000",description:"Luxury full-size SUV.",features:["4WD","Cruise","Camera","Airbags","ABS","Leather Seats","Climate Control","LED Lights"],image:"images/fortuner.avif"},
 {
-brand:"Toyota",
-model:"Innova Hycross",
-fuel:"Hybrid",
-transmission:"Automatic",
-mileage:"23.2 km/l",
-year:"2024",
-price:"₹30,50,000",
-image:"images/hycross.avif"
-},
-
+brand:"Toyota",model:"Innova Hycross",fuel:"Hybrid",transmission:"Automatic",mileage:"23.2 km/l",engine:"1987 cc",power:"183 bhp",torque:"188 Nm",seating:"7",bodyType:"MPV",driveType:"FWD",colour:"Brown",year:"2024",price:"₹30,50,000",description:"Premium hybrid MPV.",features:["Hybrid","Sunroof","360 Camera","Airbags","ABS","Wireless Charger","Touchscreen","Climate Control"],image:"images/hycross.avif"},
 {
-brand:"Honda",
-model:"City",
-fuel:"Petrol",
-transmission:"CVT",
-mileage:"18.4 km/l",
-year:"2024",
-price:"₹15,80,000",
-image:"images/city.avif"
-},
-
+brand:"Honda",model:"City",fuel:"Petrol",transmission:"CVT",mileage:"18.4 km/l",engine:"1498 cc",power:"119 bhp",torque:"145 Nm",seating:"5",bodyType:"Sedan",driveType:"FWD",colour:"Silver",year:"2024",price:"₹15,80,000",description:"Reliable premium sedan.",features:["LaneWatch","Touchscreen","Camera","Airbags","ABS","Climate Control","LED Headlamps","Keyless Entry"],image:"images/city.avif"},
 {
-brand:"Honda",
-model:"Elevate",
-fuel:"Petrol",
-transmission:"Manual",
-mileage:"16.9 km/l",
-year:"2024",
-price:"₹16,90,000",
-image:"images/elevate.avif"
-}
-
+brand:"Honda",model:"Elevate",fuel:"Petrol",transmission:"Manual",mileage:"16.9 km/l",engine:"1498 cc",power:"119 bhp",torque:"145 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"Orange",year:"2024",price:"₹16,90,000",description:"Modern SUV with premium comfort.",features:["Sunroof","Camera","Android Auto","Apple CarPlay","Airbags","ABS","Climate Control","Cruise Control"],image:"images/elevate.avif"}
 ];
 
-const params=new URLSearchParams(window.location.search);
-
-const selected=params.get("car");
-
-const car=cars.find(c=>c.model===selected);
-
-document.getElementById("carImage").src=car.image;
-document.getElementById("carModel").innerHTML=car.model;
-document.getElementById("carBrand").innerHTML=car.brand;
-document.getElementById("fuel").innerHTML=car.fuel;
-document.getElementById("transmission").innerHTML=car.transmission;
-document.getElementById("mileage").innerHTML=car.mileage;
-document.getElementById("year").innerHTML=car.year;
-document.getElementById("price").innerHTML=car.price;
-
+const selected=new URLSearchParams(location.search).get("car");
+const car=cars.find(c=>c.model===selected)||cars[0];
+for(const k of ["fuel","transmission","mileage","engine","power","torque","seating","bodyType","driveType","colour","year","price"]){
+document.getElementById(k).textContent=car[k];
+}
+carImage.src=car.image;
+carModel.textContent=car.model;
+carBrand.textContent=car.brand;
+description.textContent=car.description;
+features.innerHTML=car.features.map(f=>`<li>${f}</li>`).join("");
 </script>
-
 </body>
 </html>
