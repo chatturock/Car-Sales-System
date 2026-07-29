@@ -121,17 +121,6 @@ year:"2024",
 price:"₹16,90,000",
 
 image:"images/elevate.avif"
-},
-{
-brand:"Honda",
-model:"City",
-fuel:"Petrol",
-transmission:"CVT",
-mileage:"18.4 km/l",
-year:"2024",
-price:"₹15,80,000",
-
-image:"images/city.avif"
 }
 
 ];
