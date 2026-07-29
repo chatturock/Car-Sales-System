@@ -65,7 +65,9 @@ body{background:#f5f5f5}
 
 <div class="text-center mt-4 mb-5">
 <a href="cars.html" class="btn btn-secondary">Back</a>
-<button class="btn btn-primary ms-2">Book Test Drive</button>
+<a id="bookBtn" class="btn btn-primary ms-2">
+    Book Test Drive
+</a>
 </div>
 </div>
 
@@ -93,10 +95,15 @@ brand:"Honda",model:"City",fuel:"Petrol",transmission:"CVT",mileage:"18.4 km/l",
 brand:"Honda",model:"Elevate",fuel:"Petrol",transmission:"Manual",mileage:"16.9 km/l",engine:"1498 cc",power:"119 bhp",torque:"145 Nm",seating:"5",bodyType:"SUV",driveType:"FWD",colour:"Orange",year:"2024",price:"₹16,90,000",description:"Modern SUV with premium comfort.",features:["Sunroof","Camera","Android Auto","Apple CarPlay","Airbags","ABS","Climate Control","Cruise Control"],image:"images/elevate.avif"}
 ];
 
-const selected=new URLSearchParams(location.search).get("car");
-const car=cars.find(c=>c.model===selected)||cars[0];
+const selected = new URLSearchParams(location.search).get("car");
+
+const car = cars.find(c => c.model === selected) || cars[0];
+
+document.getElementById("bookBtn").href =
+"book.html?car=" + encodeURIComponent(car.model);
+
 for(const k of ["fuel","transmission","mileage","engine","power","torque","seating","bodyType","driveType","colour","year","price"]){
-document.getElementById(k).textContent=car[k];
+    document.getElementById(k).textContent = car[k];
 }
 carImage.src=car.image;
 carModel.textContent=car.model;
