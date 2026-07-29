@@ -100,7 +100,7 @@ image:"images/hycross.avif"
 },
 
 {
-brand:"Honda ",
+brand:"Honda",
 model:"City",
 fuel:"Petrol",
 transmission:"CVT",
