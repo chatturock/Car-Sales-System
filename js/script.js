@@ -30,7 +30,7 @@ image:"images/harrier.avif"
 
 {
 brand:"Hyundai",
-model:"Creta car",
+model:"Creta car 1",
 fuel:"Petrol",
 transmission:"Automatic",
 mileage:"17.7 km/l",
