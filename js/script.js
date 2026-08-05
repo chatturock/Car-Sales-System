@@ -100,7 +100,7 @@ image:"images/hycross.avif"
 },
 
 {
-brand:"Honda demo 1 ",
+brand:"Honda city",
 model:"City",
 fuel:"Petrol",
 transmission:"CVT",
@@ -112,7 +112,7 @@ image:"images/city.avif"
 },
 
 {
-brand:"Honda",
+brand:"Honda car 2",
 model:"Elevate",
 fuel:"Petrol",
 transmission:"Manual",
