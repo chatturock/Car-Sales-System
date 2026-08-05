@@ -112,7 +112,7 @@ image:"images/city.avif"
 },
 
 {
-brand:"Honda car 2",
+brand:"Honda",
 model:"Elevate",
 fuel:"Petrol",
 transmission:"Manual",
